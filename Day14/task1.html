@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Alladi - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            transition: all 0.3s;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Theme Toggle */
+        #theme-toggle {
+            display: none;
+        }
+        
+        .theme-label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        /* Dark Mode */
+        #theme-toggle:checked ~ .container {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        
+        #theme-toggle:checked ~ .container .theme-label {
+            background: white;
+            color: black;
+        }
+        
+        #theme-toggle:checked ~ .container .theme-label::before {
+            content: "☀ Light Mode";
+        }
+        
+        .theme-label::before {
+            content: "🌙 Dark Mode";
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        /* Dark mode header colors */
+        #theme-toggle:checked ~ .container h1 {
+            color: #3498db;
+        }
+        
+        /* About Section */
+        .about {
+            margin: 40px 0;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        
+        #theme-toggle:checked ~ .container .about {
+            background: #2d3748;
+            border-color: #444;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-img {
+            width: 10px;
+            height: 10px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        /* Sections */
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        /* Dark mode section colors */
+        #theme-toggle:checked ~ .container section {
+            border-color: #444;
+        }
+        
+        #theme-toggle:checked ~ .container h2 {
+            color: #3498db;
+            border-bottom-color: #3498db;
+        }
+        
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 15px;
+        }
+        
+        /* Projects */
+        .project {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        
+        #theme-toggle:checked ~ .container .project {
+            background: #2d3748;
+        }
+        
+        /* Contact */
+        .contact p {
+            margin: 10px 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+        
+        #theme-toggle:checked ~ .container footer {
+            border-top-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle">
+    
+    <div class="container">
+        <label for="theme-toggle" class="theme-label"></label>
+        
+        <header>
+            <h1>Surya Alladi</h1>
+            <p>CAD Designer & Web Developer</p>
+            <img src="../Day14/s@.jpg" >
+        </header>
+        
+        <section class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Surya Alladi, a passionate CAD designer and web developer with 3 years of experience in the industry.</p>
+                    <p>I specialize in creating detailed architectural designs using AutoCAD, performing structural analysis with STAAD Pro, and creating realistic 3D visualizations with 3ds Max.</p>
+                    <p>My web development skills include HTML and CSS, which I use to create clean and responsive websites.</p>
+                    <p>I enjoy solving complex design challenges and bringing creative ideas to life through technical precision and innovation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="skills-section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">AutoCAD</div>
+                <div class="skill">STAAD Pro</div>
+                <div class="skill">3ds Max</div>
+                <div class="skill">2D Drafting</div>
+                <div class="skill">3D Modeling</div>
+                <div class="skill">Structural Design</div>
+            </div>
+        </section>
+        
+        <section class="projects">
+            <h2>AutoCAD Projects</h2>
+            <div class="project">
+                <h3>Residential Building Design</h3>
+                <p>Complete architectural plans for a 3BHK house with detailed sections, elevations, and floor plans.</p>
+            </div>
+            <div class="project">
+                <h3>Commercial Complex Layout</h3>
+                <p>Floor plans and structural drawings for a multi-story shopping complex with parking facilities.</p>
+            </div>
+            <div class="project">
+                <h3>Industrial Plant Design</h3>
+                <p>Technical drawings for factory layout, machinery placement, and utility systems.</p>
+            </div>
+        </section>
+        
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>📧 Email: surya.alladi@example.com</p>
+            <p>📱 Phone: +91 98765 43210</p>
+            <p>📍 Location: Hyderabad, India</p>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 Surya Alladi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
