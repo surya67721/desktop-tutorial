@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        /* Fade-in and slide-up Cards */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .fade-in-card {
+            width: 250px;
+            height: 180px;
+            background: #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 10s forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .fade-in-card:nth-child(1) {
+            animation-delay: 10s;
+            background: #3498db;
+        }
+
+        .fade-in-card:nth-child(2) {
+            animation-delay: 15s;
+            background: #2ecc71;
+        }
+
+        .fade-in-card:nth-child(3) {
+            animation-delay: 15s;
+            background: #e74c3c;
+        }
+
+        .fade-in-card i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .fade-in-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Color Pulse Buttons with Background Change */
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pulse-button {
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .pulse-button:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-1 {
+            background-color: #e74c3c;
+        }
+
+        .btn-2 {
+            background-color: #3498db;
+        }
+
+        .btn-3 {
+            background-color: #2ecc71;
+        }
+
+        /* Background color change on hover */
+        .btn-1:hover ~ .bg-change {
+            background-color: rgba(231, 76, 60, 0.2);
+        }
+
+        .btn-2:hover ~ .bg-change {
+            background-color: rgba(52, 152, 219, 0.2);
+        }
+
+        .btn-3:hover ~ .bg-change {
+            background-color: rgba(46, 204, 113, 0.2);
+        }
+
+        .bg-change {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Spinner Button */
+        .spinner-section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .spinner-button {
+            width: 330px;
+            height: 60px;
+            background: #9b59b6;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .spinner-button:hover {
+            background: #8e44ad;
+        }
+
+        .spinner-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .spinner-button:hover::after {
+            opacity: 1;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Card Flip */
+        .flip-container {
+            perspective: 1000px;
+            width: 280px;
+            height: 350px;
+            margin: 0 auto;
+        }
+
+        .flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flip-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-front {
+            background: #3498db;
+            color: white;
+        }
+
+        .card-back {
+            background: #e74c3c;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="bg-change"></div>
+    
+    <div class="container">
+        <header>
+            <h1>CSS Animations</h1>
+           
+        </header>
+
+        <!-- Fade-in and Slide-up Cards Section -->
+        <section class="section">
+            <h2>Fade-in and Slide-up Cards</h2>
+            <div class="cards-container">
+                <div class="fade-in-card">
+                    <i>✨</i>
+                    <h3>Creative Design</h3>
+                    
+                </div>
+                <div class="fade-in-card">
+                    <i>⚡</i>
+                    <h3>Fast Performance</h3>
+                   
+                </div>
+                <div class="fade-in-card">
+                    <i>🎨</i>
+                    <h3>Modern Aesthetics</h3>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Pulse Buttons Section -->
+        <section class="section">
+            <h2>Color Pulse Buttons</h2>
+            <div class="buttons-container">
+                <button class="pulse-button btn-1">Red</button>
+                <button class="pulse-button btn-2">Blue</button>
+                <button class="pulse-button btn-3">Green</button>
+            </div>
+            <p style="text-align: center; margin-top: 15px; color: #7f8c8d;">
+               
+            </p>
+        </section>
+
+        <!-- Spinner Button Section -->
+        <section class="section">
+            <h2>Spinner on Button</h2>
+            <div class="spinner-section">
+                <button class="spinner-button">Hover to See Spinner
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, laborum, aut minima ducimus officiis quam tenetur dicta iure voluptatem dignissimos totam nam quis in alias repudiandae sunt perferendis? Cupiditate, temporibus.</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- Card Flip Section -->
+        <section class="section">
+            <h2>Card Flip Animation</h2>
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <div class="card-icon">💳</div>
+                        <h3 class="card-title">Front Side</h3>
+
+                    </div>
+                    <div class="card-back">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Back Side</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+    </div>
+
+   
+</body>
+</html>
