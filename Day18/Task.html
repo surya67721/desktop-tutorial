@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Responsive  Media Queries</title>
+<style>
+  /* Base styles */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+  }
+  .box {
+    height: 100px;
+    border-radius: 8px;
+  }
+  .box1 {
+    background-color: #f44336; /* Red */
+  }
+  .box2 {
+    background-color: #4caf50; /* Green */
+  }
+  .box3 {
+    background-color: #2196f3; /* Blue */
+  }
+
+  /* Default mobile styles (smallest) */
+  body {
+    background-color: lightblue;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  /* Tablet: 601px to 768px (less than 768px for layout) */
+  @media (min-width: 601px) and (max-width: 767px) {
+    body {
+      background-color: lightyellow;
+    }
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 100px);
+    }
+  }
+
+  /* Tablet: 768px to 992px (extended tablet size) */
+  @media (min-width: 768px) and (max-width: 992px) {
+    body {
+      background-color: lightyellow;
+    }
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 100px);
+    }
+  }
+
+  /* Laptop/Desktop: 993px and above */
+  @media (min-width: 993px) {
+    body {
+      background-color: white;
+    }
+    .container {
+      /* 3 in a row, 1 row */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 100px;
+    }
+  }
+
+  /* Orientation media queries */
+  @media (orientation: landscape) {
+    body {
+      background-color: rgb(0, 128, 21);
+    }
+  }
+
+  @media (orientation: portrait) {
+    body {
+      background-color: purple;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+  </div>
+</body>
+</html>
