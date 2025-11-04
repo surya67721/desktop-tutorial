@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light / Dark Mode Theme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌞 Light Mode / 🌙 Dark Mode</h1>
+        
+        <div class="theme">
+            <button class="theme-btn light-btn" onclick="setLightMode()">
+                🌞  Light Mode
+            </button>
+            <button class="theme-btn dark-btn" onclick="setDarkMode()">
+               🌙 Dark Mode
+            </button>
+        </div>
+
+        <div class="content">
+            <p>Click on the buttons above to toggle between light and dark themes.</p>
+            <p>The transition between themes is smooth and affects all elements on the page.</p>
+        </div>
+    </div>
+
+     <script>
+        function setLightMode() {
+            document.body.classList.remove('dark-mode');
+        }
+
+        function setDarkMode() {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+   
+</body>
+</html>

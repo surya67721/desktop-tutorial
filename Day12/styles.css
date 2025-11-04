@@ -1,0 +1,86 @@
+ :root {
+            --light-green: #a8d5a8;
+            --white: #ffffff;
+            --dark-green: #6fa36f;
+            --square-size: 60px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5; 
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .chess-board {
+            display: grid;
+            grid-template-columns: repeat(8, var(--square-size));
+            grid-template-rows: repeat(8, var(--square-size));
+            border: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .square {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            user-select: none;
+        }
+
+        .white {
+            background-color: var(--white);
+        }
+
+        .green {
+            background-color: var(--light-green);
+        }
+
+        .coordinates {
+            display: grid;
+            grid-template-columns: repeat(8, var(--square-size));
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .file-coordinates {
+            display: flex;
+            margin-bottom: 10px;
+            margin-left: var(--square-size);
+        }
+
+        .file-coord, .rank-coord {
+            width: var(--square-size);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .info {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 500px;
+            background-color: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .info p {
+            line-height: 1.5;
+            color: #555;
+        }

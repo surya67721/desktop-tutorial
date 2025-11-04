@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fofana </title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: 'Roboto', sans-serif;
+  font-size:16px ;
+  margin: 0;
+  background: #fcf7f6;
+  color: #333;
+ }
+
+ .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5%;
+  background: transparent;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.dot {
+  color: #fa6868;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #323232;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #fa6868;
+}
+
+.hire-btn {
+  background: #fa6868;
+  color:  #ffff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.hire-btn:hover {
+  background: #0e0d0d;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 88vh;
+  padding: 0 7% 0 7%;
+}
+
+.left-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.4rem;
+  min-width: 350px;
+  max-width: 520px;
+  margin-top: 3rem;
+}
+
+.intro-text {
+  color: #fa6868;
+  font-size: 1.24rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  line-height: 1.13;
+}
+
+.desc {
+  color: #5a6473;
+  font-size: 1.13rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.cta-btns {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.primary-btn {
+  background: #fa6868;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.85rem 2.2rem;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover {
+  background: #e65555;
+}
+
+.secondary-btn {
+  color: #3b3b3b;
+  font-size: 1.08rem;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.secondary-btn .arrow {
+  margin-left: 0.5rem;
+  font-size: 1.18rem;
+}
+
+.secondary-btn:hover {
+  color: #fa6868;
+}
+
+.right-col {
+  flex: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 340px;
+  position: relative;
+}
+
+.circle-art {
+  position: relative;
+  width: 460px;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-art::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 440px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #fa686844;
+  z-index: 1;
+}
+.circle-art::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  height: 340px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #fa686825;
+  z-index: 1;
+}
+
+.profile-img {
+  width: 345px;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 18px;
+  z-index: 2;
+  background:none;
+  position: relative;
+  
+}
+.features-section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcf7f6;
+  margin: 0;
+  padding: 20px 0 50px 0;
+}
+
+.features-grid {
+  background: #393939;
+  border-radius: 26px;
+  width: 85vw;
+  max-width: 1700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px 60px;
+  padding: 60px 60px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 34px;
+}
+
+.feature-icon {
+  min-width: 72px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-content h3 {
+  color: #fff;
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.feature-content p {
+  color: #d7dde3;
+  font-size: 1.16rem;
+  line-height: 1.5;
+  margin: 0;
+ font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 1000px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 18px;
+    gap: 38px;
+  }
+  .feature-content h3 {
+    font-size: 1.42rem;
+  }
+  .feature-icon {
+    min-width: 56px;
+    min-height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .features-grid {
+    width: 98vw;
+    padding: 30px 8px;
+    border-radius: 16px;
+    gap: 27px;
+  }
+  .feature-content h3 {
+    font-size: 1.15rem;
+  }
+  .feature-icon {
+    min-width: 38px;
+    min-height: 38px;
+  }
+}
+.services-section {
+  max-width: 100vw;
+  text-align: center;
+  padding: 44px 0 84px 0;
+  background: #fff;
+}
+
+.services-header {
+  margin-bottom: 54px;
+}
+
+.services-subtitle {
+  color: #fa6868;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.services-header h2 {
+  font-size: 3.1rem;
+  font-weight: 800;
+  color: #393939;
+  margin: 0;
+  line-height: 1.18;
+  letter-spacing: 0.2px;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 350px));
+  gap: 46px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 38px 26px 28px 26px;
+  min-height: 264px;
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+}
+
+.service-card.active {
+  background: #fff;
+  box-shadow: 0 8px 44px 8px #dddde7;
+  z-index: 1;
+}
+
+.service-icon {
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+}
+
+.service-card h3 {
+  color: #393939;
+  font-size: 2rem;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+
+.service-card p {
+  margin: 0;
+  color: #868e96;
+  font-size: 1.11rem;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 1050px) {
+  .service-cards {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+.portfolio-section {
+  width: 100vw;
+  background: #fcf7f6;
+  padding: 0 0 70px 0;
+  overflow-x: hidden;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 38px;
+  padding-top: 38px;
+}
+
+.portfolio-subtitle {
+  color: #b87878;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.portfolio-header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #232323;
+  line-height: 1.17;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.portfolio-grid {
+  width: 95vw;
+  max-width: 1350px;
+  margin: 38px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 350px 350px;
+  gap: 36px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 2px 24px #ece2e250;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.portfolio-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.22s;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.045);
+}
+
+.portfolio-card {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 24px 32px 18px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px #25273814;
+  margin: 0 0 26px 27px;
+  min-width: 220px;
+}
+
+.portfolio-title {
+  color: #fa6868;
+  font-weight: 600;
+  font-size: 1.11rem;
+  margin-bottom: 7px;
+}
+
+.portfolio-desc {
+  color: #868e96;
+  font-size: 1.01rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width:1000px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 250px);
+    gap: 30px;
+    width: 98vw;
+  }
+  .portfolio-header h2 { font-size: 2rem; }
+}
+@media (max-width:600px) {
+  .portfolio-grid {
+    grid-template-rows: repeat(4, 170px);
+    gap: 15px;
+    padding: 0 2vw;
+    width: 99vw;
+  }
+  .portfolio-card {
+    padding: 13px 10px 7px 10px;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    min-width: 0;
+  }
+}
+.pricing-section {
+  max-width: 100vw;
+  padding: 0 0 64px 0;
+  background: #fff;
+}
+
+.pricing-header {
+  margin-left: 140px;
+  padding-top: 26px;
+  margin-bottom: 28px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pricing-subtitle {
+  color: #fa6868;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pricing-header h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #232323;
+  margin: 0;
+  line-height: 1.07;
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+ 
+  margin: 28px 0 0 0;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: #fff;
+  color: #222;
+  padding: 38px 38px 40px 38px;
+  border-radius: 14px;
+  min-width: 350px;
+  max-width: 398px;
+  box-shadow: 0 4px 24px 0 #d9d4d4;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 33.333333%;
+}
+
+.pricing-card.highlighted {
+  background: #393939;
+  color: #fff;
+  width:33.333333%;
+}
+
+.pricing-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pricing-card .desc {
+  color: #868e96;
+  font-size: 1.12rem;
+  margin: 0 0 18px 0;
+}
+
+.pricing-card.highlighted .desc {
+  color: #bbb;
+}
+
+.price {
+  color: #fa6868;
+  font-size: 3.7rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1.5px solid #e0e0e0;
+  margin: 18px 0 26px 0;
+}
+
+.pricing-card.highlighted hr {
+  border-top: 1.5px solid #777;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+ul li {
+  color: #868e96;
+  font-size: 1.14rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+ font-family: 'Roboto', sans-serif;
+}
+
+.pricing-card.highlighted ul li {
+  color: #bbb;
+}
+
+.check {
+  color: #fa6868;
+  font-size: 1.2em;
+  margin-right: 13px;
+  vertical-align: middle;
+}
+
+.start-btn {
+  margin-top: 12px;
+  display: inline-block;
+  background: #fa6868;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  padding: 14px 36px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.12rem;
+  transition: background 0.16s;
+}
+
+.start-btn:hover {
+  background: #d04949;
+}
+
+/* Responsive tweaks */
+@media (max-width:1200px) {
+  .pricing-header { margin-left: 10vw; }
+  .pricing-row { gap: 18px; }
+  .pricing-card { min-width: 260px; }
+}
+@media (max-width:900px) {
+  .pricing-row { flex-direction: column; align-items: center;}
+  .pricing-header { margin-left: 0;}
+  .pricing-card { max-width: 460px; width: 100%; }
+}
+.testimonial-section {
+  position: relative;
+  width: 100vw;
+  min-height: 490px;
+  padding: 70px 0;
+  background: #222;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.testimonial-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://ngetemplates.com/fofana/img/testimonial.jpg') center center / cover no-repeat;
+  filter: blur(2px) brightness(0.85);
+  z-index: 1;
+}
+
+.testimonial-grid {
+  z-index: 2;
+  position: relative;
+  width: 90vw;
+  max-width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 2px 22px 0 #12151820;
+  padding: 48px 38px 38px 38px;
+  max-width: 460px;
+  width: 100%;
+  min-width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-text {
+  color: #686e79;
+  font-size: 1.28rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 40px;
+  line-height: 1.55;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.testimonial-quote {
+  color: #fa6868;
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.testimonial-author {
+  color: #232323;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.testimonial-role {
+  color: #868e96;
+  font-size: 1.12rem;
+  margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+  .testimonial-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 98vw;
+  }
+  .testimonial-card { max-width: 572px; }
+}
+@media (max-width: 700px) {
+  .testimonial-card { min-width: 0; padding: 29px 10px 26px 10px;}
+  .testimonial-text { font-size: 1.01rem; }
+  .testimonial-quote { font-size: 3rem; }
+  .testimonial-author { font-size: 1.28rem; }
+  .testimonial-role { font-size: 0.97rem; }
+}
+.contact-section {
+  text-align: center;
+  padding: 90px 0 50px 0;
+  background: #fff;
+}
+
+.contact-label {
+  color: #232323;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.contact-phone {
+  color: #fa6868;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contact-email {
+  color: #868e96;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contact-address {
+  color: #868e96;
+  font-size: 1.12rem;
+  margin-bottom: 35px;
+  
+}
+
+.contact-socials {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+}
+
+.contact-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #232323;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.65rem;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.contact-social:hover {
+  background: #fa6868;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-phone { font-size: 2rem; }
+  .contact-label { font-size: 1.18rem; }
+  .contact-social { width: 38px; height: 38px; font-size: 1.15rem; }
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Fofana<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Testimonial</a></li>
+      <li><a href="#">Contact us</a></li>
+       <a class="hire-btn" href="#">Hire us</a>
+    </ul>
+   
+  </nav>
+
+  <main class="container">
+    <!-- Left column -->
+    <div class="left-col">
+      <span class="intro-text">Hi There, I'm Fofana</span>
+      <h1 class="main-title">Full Stack<br>Developer</h1>
+      <p class="desc">
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Ipsa voluptate reiciendis nesciunt sed, commodi aperiam iste rem blanditiis dicta impedit sequi. Ratione odit, excepturi, numquam a libero maxime aut. Rem?
+      </p>
+      <div class="cta-btns">
+        <a href="#" class="primary-btn">Learn More</a>
+        <a href="#" class="secondary-btn">See our work <span class="arrow">&#8594;</span></a>
+      </div>
+    </div>
+    <!-- Right column -->
+    <div class="right-col">
+      <div class="circle-art">
+        <!-- Gradient circle art background -->
+        <img src="https://ngetemplates.com/fofana/img/person.png" alt="Full Stack Developer" class="profile-img">
+      </div>
+    </div>
+  </main>
+  <!-- Feature Section Start -->
+<section class="features-section">
+  <div class="features-grid">
+    <!-- Feature 1 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <!-- Graduation cap SVG -->
+        <svg height="72" width="72" fill="none" stroke="#fa6868" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 72 72">
+          <path d="M36 16L12 28l24 12 24-12-24-12z"/>
+          <path d="M12 28v8c0 6.63 10.74 12 24 12s24-5.37 24-12v-8"/>
+          <line x1="36" y1="40" x2="36" y2="58"/>
+          <circle cx="36" cy="60" r="3"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <h3>Fast Learn</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Dolorem natus esse ullam exercitationem soluta ad! Assumenda eum</p>
+      </div>
+    </div>
+    <!-- Feature 2 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <!-- Phone SVG -->
+        <svg height="72" width="72" fill="none" stroke="#fa6868" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 72 72">
+          <rect x="14" y="18" width="44" height="18" rx="6"/>
+          <circle cx="25" cy="48" r="3"/>
+          <circle cx="36" cy="48" r="3"/>
+          <circle cx="47" cy="48" r="3"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <h3>Friendly Support</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Dolorem natus esse ullam exercitationem soluta ad! Assumenda eum</p>
+      </div>
+    </div>
+    <!-- Feature 3 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <!-- Mouse SVG -->
+        <svg height="72" width="72" fill="none" stroke="#fa6868" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 72 72">
+          <rect x="16" y="12" width="40" height="48" rx="20"/>
+          <line x1="36" y1="20" x2="36" y2="36"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <h3>Creative</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Dolorem natus esse ullam exercitationem soluta ad! Assumenda eum</p>
+      </div>
+    </div>
+    <!-- Feature 4 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <!-- Biking SVG -->
+        <svg height="72" width="72" fill="none" stroke="#fa6868" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 72 72">
+          <circle cx="22" cy="54" r="10"/>
+          <circle cx="50" cy="54" r="10"/>
+          <path d="M38 54L32 40M36 32l8 13m-10-20c2 0 4 2 4 4s-2 4-4 4-4-2-4-4 2-4 4-4zm8 21H49l-7-13m-7 13h10"/>
+        </svg>
+      </div>
+      <div class="feature-content">
+        <h3>Work Hard</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Dolorem natus esse ullam exercitationem soluta ad! Assumenda eum</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Feature Section End -->
+<!-- Services Section Start -->
+<section class="services-section">
+  <div class="services-header">
+    <div class="services-subtitle">Services</div>
+    <h2>We provide the best<br>services</h2>
+  </div>
+  <div class="service-cards">
+    <!-- Design Card -->
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Pencil/edit SVG -->
+        <svg width="44" height="44" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="#fa6868"/>
+          <path d="M16 8l-7.47 7.47a2 2 0 00-.42.65l-1 2.22a.5.5 0 00.66.66l2.22-1a2 2 0 00.65-.42L16 8M14 6.5a2.12 2.12 0 013 3" stroke="#fff"/>
+        </svg>
+      </div>
+      <h3>Design</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <!-- Programming Card (center, highlighted) -->
+    <div class="service-card active">
+      <div class="service-icon">
+        <!-- Code SVG -->
+        <svg width="44" height="44" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="#fa6868"/>
+          <path d="M10 9l-2 3 2 3M14 9l2 3-2 3" stroke="#fff"/>
+        </svg>
+      </div>
+      <h3>Programming</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <!-- Marketing Card -->
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Megaphone SVG -->
+        <svg width="44" height="44" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="#fa6868"/>
+          <path d="M16 8.5V9a4 4 0 01-4 4H8m7-2V7a1 1 0 10-2 0v7m4.5-3a2.5 2.5 0 010 5" stroke="#fff"/>
+        </svg>
+      </div>
+      <h3>Marketing</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+  </div>
+</section>
+<!-- Services Section End -->
+<!-- Portfolio Section Start -->
+<section class="portfolio-section">
+  <div class="portfolio-header">
+    <div class="portfolio-subtitle">Portfolio</div>
+    <h2>See our awesome<br>done project</h2>
+  </div>
+  <div class="portfolio-grid">
+    <!-- Item 1 -->
+    <div class="portfolio-item">
+      <img src="https://ngetemplates.com/fofana/img/portfolio1.jpg" alt="Design Art">
+      <div class="portfolio-card">
+        <div class="portfolio-title">Design Art</div>
+        <div class="portfolio-desc">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+      </div>
+    </div>
+    <!-- Item 2 -->
+    <div class="portfolio-item">
+      <img src="https://ngetemplates.com/fofana/img/portfolio2.jpg" alt="Marketing">
+      <div class="portfolio-card">
+        <div class="portfolio-title">Marketing</div>
+        <div class="portfolio-desc">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+      </div>
+    </div>
+    <!-- Item 3 -->
+    <div class="portfolio-item">
+      <img src="https://ngetemplates.com/fofana/img/portfolio3.jpg" alt="Creative Design">
+      <div class="portfolio-card">
+        <div class="portfolio-title">Creative Design</div>
+        <div class="portfolio-desc">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+      </div>
+    </div>
+    <!-- Item 4 -->
+    <div class="portfolio-item">
+      <img src="https://ngetemplates.com/fofana/img/portfolio4.jpg" alt="Programming">
+      <div class="portfolio-card">
+        <div class="portfolio-title">Programming</div>
+        <div class="portfolio-desc">Lorem ipsum dolor sit amet, consectetur adipisicing</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Portfolio Section End -->
+<!-- Pricing Section Start -->
+<section class="pricing-section">
+  <div class="pricing-header">
+    <div class="pricing-subtitle">Pricing</div>
+    <h2>Choose our pricing</h2>
+  </div>
+  <div class="pricing-row">
+    <!-- Design Card -->
+    <div class="pricing-card">
+      <h3>Design</h3>
+      <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      <div class="price">$89</div>
+      <hr>
+      <ul>
+        <li><span class="check">&#10003;</span> Free Support</li>
+        <li><span class="check">&#10003;</span> Update</li>
+        <li><span class="check">&#10003;</span> Revision</li>
+        <li><span class="check">&#10003;</span> Unlimited</li>
+      </ul>
+      <a href="#" class="start-btn">Get Started</a>
+    </div>
+    <!-- Programming Card (center, highlighted) -->
+    <div class="pricing-card highlighted">
+      <h3>Programming</h3>
+      <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      <div class="price">$99</div>
+      <hr>
+      <ul>
+        <li><span class="check">&#10003;</span> Free Support</li>
+        <li><span class="check">&#10003;</span> Update</li>
+        <li><span class="check">&#10003;</span> Revision</li>
+        <li><span class="check">&#10003;</span> Unlimited</li>
+      </ul>
+      <a href="#" class="start-btn">Get Started</a>
+    </div>
+    <!-- Marketing Card -->
+    <div class="pricing-card">
+      <h3>Marketing</h3>
+      <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      <div class="price">$69</div>
+      <hr>
+      <ul>
+        <li><span class="check">&#10003;</span> Free Support</li>
+        <li><span class="check">&#10003;</span> Update</li>
+        <li><span class="check">&#10003;</span> Revision</li>
+        <li><span class="check">&#10003;</span> Unlimited</li>
+      </ul>
+      <a href="#" class="start-btn">Get Started</a>
+    </div>
+  </div>
+</section>
+<!-- Pricing Section End -->
+ <!-- Testimonials Section Start -->
+<section class="testimonial-section">
+  <div class="testimonial-bg"></div>
+  <div class="testimonial-grid">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Voluptas quis vel asperiores
+        incidunt illum placeat ab, ex iste reprehenderit ipsa commodi reiciendis
+      </div>
+      <div class="testimonial-footer">
+        <span class="testimonial-quote">&#10077;</span>
+        <div>
+          <div class="testimonial-author">John Doe</div>
+          <div class="testimonial-role">Directur</div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Voluptas quis vel asperiores
+        incidunt illum placeat ab, ex iste reprehenderit ipsa commodi reiciendis
+      </div>
+      <div class="testimonial-footer">
+        <span class="testimonial-quote">&#10077;</span>
+        <div>
+          <div class="testimonial-author">Mario</div>
+          <div class="testimonial-role">Marketing</div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Voluptas quis vel asperiores
+        incidunt illum placeat ab, ex iste reprehenderit ipsa commodi reiciendis
+      </div>
+      <div class="testimonial-footer">
+        <span class="testimonial-quote">&#10077;</span>
+        <div>
+          <div class="testimonial-author">Wesley</div>
+          <div class="testimonial-role">Programming</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section End -->
+<!-- Contact Section Start -->
+<section class="contact-section">
+  <div class="contact-label">Give us a call</div>
+  <div class="contact-phone">+61 3 8376 6284</div>
+  <div class="contact-email">contact@domain.com</div>
+  <div class="contact-address">
+    121 King Street, Melbourne Victoria 3000 Australia
+  </div>
+  <div class="contact-socials">
+    <a href="#" title="Facebook" class="contact-social">&#xf09a;</a>
+    <a href="#" title="Twitter" class="contact-social">&#xf099;</a>
+    <a href="#" title="LinkedIn" class="contact-social">&#xf0e1;</a>
+    <a href="#" title="YouTube" class="contact-social">&#xf167;</a>
+    
+  </div>
+</section>
+
+
+</body>
+</html>
