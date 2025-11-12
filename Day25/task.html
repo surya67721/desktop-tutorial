@@ -67,16 +67,20 @@
         
 
              //display all products
-             let sizes = ["S", "M", "L", "XL"];
-             for (var i = 0; i < sizes.length; i++) {
-             if (sizes[i] === "S") {
-              console.log("red color: " + sizes[i] );
-             } else if (sizes[i] === "M") {
-               console.log("green color: " + sizes[i] );
-             } else if (sizes[i] === "L" || sizes[i] === "XL") {
-             console.log("blue color: " + sizes[i] );
-            }
-           }
+            let colors = ["red", "green", "blue"];
+let sizes = ["s", "l", "m"];
+
+for (let i = 0; i < sizes.length; i++) {
+  for (let j = 0; j < colors.length; j++) {
+    if (
+      (sizes[i] === "s" && colors[j] === "red") ||
+      (sizes[i] === "l" && colors[j] === "green") ||
+      (sizes[i] === "m" && colors[j] === "blue")
+    ) {
+      console.log( sizes[i] +  colors[j]);
+    }
+  }
+}
 
                 
         </script>
