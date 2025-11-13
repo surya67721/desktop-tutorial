@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS functions</title>
+    <h2>console browser to see the output</h2>
+    <body>
+        <script>
+            // All Arithmetic operation using functions
+
+            // function for addition
+            function addition(a, b){
+                return a+b;
+            }
+            let result=addition(20,15);
+            console.log(result);
+
+            // function for subraction
+            function subraction(c,d){
+                return c-d;
+            }
+            let results=subraction(35,15);
+            console.log(results);
+            
+            // function for division
+            function division(p,q){
+                
+                return p%q;
+            }
+            let resultss=division(45,6);
+            console.log(resultss);
+
+            // Multlipication
+            function Multlipication (x,y){
+                return x*y;
+            }
+            let resultsss=Multlipication(4,6);
+            console.log(resultsss);
+
+
+             
+            //    Calculate total cart value
+            //   Hint: parameter we need to pass array [199, 299, 499]
+            //    Discount (Ex:10%)
+         
+                function calculateTotal(cartArray) {
+             let total = 0;
+             for (let i = 0; i < cartArray.length; i++) {
+             total += cartArray[i];
+             }
+             return total;
+         }
+
+             // Function to apply discount
+             function applyDiscount(total, percent) {
+             let discount = total * (percent / 100);
+             return total - discount;
+            }
+
+             // Example usage
+             let cart = [199, 299, 499]; // The array parameter
+             let totalCartValue = calculateTotal(cart); // Without discount
+             let totalAfterDiscount = applyDiscount(totalCartValue, 10); // Applying 10% discount
+
+             console.log("Total cart value:", totalCartValue);        // 997
+              console.log("After 10% discount:", totalAfterDiscount);  // 897.3
+             
+             // Convert Celsius – Fahrenheit
+             function celsiusToFahrenheit(celsius){
+             fahrenheit = (celsius * 9/5) + 32;
+             return fahrenheit;
+             }
+
+             function fahrenheitToCelsius(fahrenheit){
+             celsius = (fahrenheit - 36) * 5/9;
+             return celsius;
+             }
+
+             console.log(celsiusToFahrenheit(36));
+             console.log(fahrenheitToCelsius(70));
+
+        </script>
+    </body>
+
+</html>
