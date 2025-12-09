@@ -1,46 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title> QR Code Generator</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-  }
-  #qrcode {
-    margin-top: 15px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Crypto Landing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5.3.8 CSS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"><!-- [web:3][web:14] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> 
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .hero       { background:#050b3b; color:#fff; padding:80px 0; }
+    .prices     { background:#050b3b; color:#fff; padding:60px 0; }
+    .trusted    { background:#f7f7f7; padding:60px 0; }
+    .learn      { background:#f7f7f7; padding:60px 0; }
+    .download   { background:#0b2f7a; color:#fff; padding:80px 0; }
+    .newsletter { background:#040c48; color:#fff; padding:60px 0 40px; }
+    .footer     { background:#3b1f80; color:#fff; padding:40px 0; font-size:0.9rem; }
+    .card-img-top { height:200px; object-fit:cover; }
+    .fa-facebook{color: chocolate; padding:10px;}
+    .fa-x-twitter{color:chocolate; padding:10px;}
+    .fa-square-linkedin{color: chocolate;padding:10px;}
+    .fa-instagram{color:chocolate;padding:10px;}
+  </style>
 </head>
 <body>
-  <h2> QR Code Generator</h2>
-  <input type="text" id="text" placeholder="Enter text or URL" style="width: 300px; padding: 5px" />
-  <button onclick="generateQRCode()">Generate QR Code</button>
-  <div id="qrcode"></div>
 
-  <script>
-    function generateQRCode() {
-      const input = document.getElementById("text").value.trim();
-      const qrCodeContainer = document.getElementById("qrcode");
+<!-- HEADER + NAVBAR with logo -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:#050b3b;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <!-- header logo -->
+      <img src="assests/logo.png" width="50px" height="50px">
+          
+      <span class="fw-bold">Cryptous</span>
+    </a>
 
-      // Clear previous QR code if any
-      qrCodeContainer.innerHTML = "";
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      if (!input) {
-        alert("Please enter some text or URL to generate QR code.");
-        return;
-      }
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Company</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+      <a href="#" class="btn btn-outline-light ms-lg-3 rounded-pill">
+        Trade Now
+      </a>
+    </div>
+  </div>
+</nav>
 
-      // Generate QR code
-      new QRCode(qrCodeContainer, {
-        text: input,
-        width: 200,
-        height: 200,
-      });
-    }
-  </script>
-</body>
-</html>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h1 class="fw-bold display-5 mb-3">
+          Make better business<br>with Cryptocurrency
+        </h1>
+        <p class="mb-4">
+          We offers users a fully operational long‑term rental platform. It plans to leverages blockchain technology.
+        </p>
+        <button class="btn btn-warning rounded-pill px-4">
+          Get Whitelisted
+        </button>
+      </div>
+      <div class="col-md-6 text-center">
+        <!-- main hero illustration -->
+        <img src="assests/coin.png" alt="Crypto coin" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TODAY'S CRYPTOCURRENCY PRICES -->
+<section class="prices">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Today's Cryptocurrency Prices</h2>
+
+    <div class="table-responsive">
+      <table class="table table-dark table-striped align-middle mb-0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>24h %</th>
+            <th>7d %</th>
+            <th>Market Cap</th>
+            <th>Volume(24h)</th>
+            <th>Last 7 Days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- example row with images -->
+          <tr>
+            <td>1</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assests/bitcoin.png" alt="Bitcoin" class="me-2"
+                     style="width:26px; height:26px;">
+                <div class="fw-semibold">Bitcoin BTC</div>
+              </div>
+            </td>
+            <td>$55,208.61</td>
+            <td class="text-success">▲ 0.92%</td>
+            <td class="text-success">▲ 15.88%</td>
+            <td>$1,046,899,935,348</td>
+            <td>$1,046,899,935,348<br><small class="text-muted">653,452 BTC</small></td>
+            <td class="text-end">
+              <img src="assests/up1 - Copy (2).png" alt="BTC 7d chart" style="height:32px;">
+            </td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assests/Ethereum.png" alt="Ethereum" class="me-2"
+                     style="width:26px; height:26px;">
+                <div class="fw-semibold">Ethereum ETH</div>
+              </div>
+            </td>
+            <td>$55,208.61</td>
+            <td class="text-danger">▲ 0.92%</td>
+            <td class="text-success">▲ 15.88%</td>
+            <td>$1,046,899,935,348</td>
+            <td>$1,046,899,935,348<br><small class="text-muted">653,452 BTC</small></td>
+            <td class="text-end">
+              <img src="assests/up1 - Copy (2).png" alt="BTC 7d chart" style="height:32px;">
+            </td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assests/Cardano.png" alt="Bitcoin" class="me-2"
+                     style="width:26px; height:26px;">
+                <div class="fw-semibold">Cardano ADA</div>
+              </div>
+            </td>
+            <td>$55,208.61</td>
+            <td class="text-danger">▲ 0.92%</td>
+            <td class="text-danger">▲ 15.88%</td>
+            <td>$1,046,899,935,348</td>
+            <td>$1,046,899,935,348<br><small class="text-muted">653,452 BTC</small></td>
+            <td class="text-end">
+              <img src="assests/up2-removebg-preview - Copy.png" alt="BTC 7d chart" style="height:32px;">
+            </td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assests/tether.png" alt="Bitcoin" class="me-2"
+                     style="width:26px; height:26px;">
+                <div class="fw-semibold">Tether USDT</div>
+              </div>
+            </td>
+            <td>$55,208.61</td>
+            <td class="text-success">▲ 0.92%</td>
+            <td class="text-success">▲ 15.88%</td>
+            <td>$1,046,899,935,348</td>
+            <td>$1,046,899,935,348<br><small class="text-muted">653,452 BTC</small></td>
+            <td class="text-end">
+              <img src="assests/up1 - Copy (2).png" alt="BTC 7d chart" style="height:32px;">
+            </td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assests/Avalanche.png" alt="Bitcoin" class="me-2"
+                     style="width:26px; height:26px;">
+                <div class="fw-semibold">Avalanche AVAX</div>
+              </div>
+            </td>
+            <td>$55,208.61</td>
+            <td class="text-danger">▲ 0.92%</td>
+            <td class="text-danger">▲ 15.88%</td>
+            <td>$1,046,899,935,348</td>
+            <td>$1,046,899,935,348<br><small class="text-muted">653,452 BTC</small></td>
+            <td class="text-end">
+              <img src="assests/up2-removebg-preview - Copy.png" alt="BTC 7d chart" style="height:32px;">
+            </td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="assests/Algorand.png" alt="Bitcoin" class="me-2"
+                     style="width:26px; height:26px;">
+                <div class="fw-semibold">Algorand ALGO</div>
+              </div>
+            </td>
+            <td>$55,208.61</td>
+            <td class="text-success">▲ 0.92%</td>
+            <td class="text-success">▲ 15.88%</td>
+            <td>$1,046,899,935,348</td>
+            <td>$1,046,899,935,348<br><small class="text-muted">653,452 BTC</small></td>
+            <td class="text-end">
+              <img src="assests/up1 - Copy (2).png" alt="BTC 7d chart" style="height:32px;">
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- THE MOST TRUSTED PLATFORM -->
+<section class="trusted">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">
+      The most trusted cryptocurrency platform
+    </h2>
+
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4">
+        <img src="assests/Screenshot 2025-08-22 141423.png" alt="Ease of Trading"
+             class="mb-3" style="width:80px; height:auto;">
+        <h5 class="fw-semibold">Ease of Trading</h5>
+        <p class="mb-1">Intuitive interface</p>
+        <p class="mb-1">Instant deposit options</p>
+        <p class="mb-0">Cash out directly to your bank account</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <img src="assests/Screenshot 2025-08-22 141433.png" alt="Institutional-grade Security"
+             class="mb-3" style="width:80px; height:auto;">
+        <h5 class="fw-semibold">Institutional‑grade Security</h5>
+        <p class="mb-1">98% of assets stored safely offline</p>
+        <p class="mb-1">Highly encrypted personal data</p>
+        <p class="mb-0">Whitelisting and transaction confirmations</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <img src="assests/Screenshot 2025-08-22 141442.png" alt="Proven Reliability"
+             class="mb-3" style="width:80px; height:auto;">
+        <h5 class="fw-semibold">Proven Reliability</h5>
+        <p class="mb-1">Exchanging bitcoin since 2011</p>
+        <p class="mb-1">Industry‑leading uptime</p>
+        <p class="mb-0">24/7 dedicated support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download py-5" style="background:#0b2f7a; color:#fff;">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left text -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="fw-bold mb-3">
+          Try the future, today.<br>
+          Download Crypto
+        </h2>
+        <p class="mb-4">
+          Stay connected to the market with our mobile app. Featuring advanced order types
+          and analytical tools for experienced traders, as well as a simple buy &amp; sell
+          interface for those just getting started.
+        </p>
+
+        <!-- store buttons images -->
+        <div class="d-flex gap-3">
+          <img src="assests/Screenshot 2025-08-22 141555.png" alt="Download on the App Store"
+          style="height:48px; width:auto;">
+        </div>
+      </div>
+
+      <!-- Right phone mockups -->
+      <div class="col-md-6 text-center">
+        <img src="assests/phone.png" alt="Crypto app screen 1"
+          class="img-fluid me-2" style="max-height:320px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Learn to thrive</h2>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <!-- top image -->
+          <img src="assests/1.png" class="card-img-top" alt="Article 1 image">
+          <div class="card-body">
+            <h6 class="card-title fw-semibold">
+              New Leveraged Pairs Added to Margin Trading on the Crypto.com Exchange
+            </h6>
+            <p class="card-text small text-muted mb-3">
+              We urge everyone adopt good cybersecurity habits, and to have unique passwords on every site they use.
+            </p>
+            <p class="card-text small text-muted mb-0">
+              By Jennie Peris &nbsp; | &nbsp; 15/07/2021 &nbsp; | &nbsp; 5 Min to read
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assests/2.png" class="card-img-top" alt="Article 2 image">
+          <div class="card-body">
+            <h6 class="card-title fw-semibold">
+              New Leveraged Pairs Added to Margin Trading on the Crypto.com Exchange
+            </h6>
+            <p class="card-text small text-muted mb-3">
+              We urge everyone adopt good cybersecurity habits, and to have unique passwords on every site they use.
+            </p>
+            <p class="card-text small text-muted mb-0">
+              By Jennie Peris &nbsp; | &nbsp; 15/07/2021 &nbsp; | &nbsp; 5 Min to read
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assests/3.png" class="card-img-top" alt="Article 3 image">
+          <div class="card-body">
+            <h6 class="card-title fw-semibold">
+              New Leveraged Pairs Added to Margin Trading on the Crypto.com Exchange
+            </h6>
+            <p class="card-text small text-muted mb-3">
+              We urge everyone adopt good cybersecurity habits, and to have unique passwords on every site they use.
+            </p>
+            <p class="card-text small text-muted mb-0">
+              By Jennie Peris &nbsp; | &nbsp; 15/07/2021 &nbsp; | &nbsp; 5 Min to read
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5" style="background:linear-gradient(#041b64 0%, #4a238b 55%, #4a238b 100%); color:#fff;">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-2">Never miss a drop</h2>
+    <p class="mb-4">Subscribe for the latest news, drops &amp; collectibles</p>
+
+    <div class="d-flex justify-content-center mb-5">
+      <form class="d-flex w-100" style="max-width:520px;">
+        <input type="email" class="form-control rounded-pill rounded-end-0 px-4 bg-transparent text-white border-light"
+               placeholder="Enter your email address">
+        <button type="submit"
+                class="btn btn-warning rounded-pill rounded-start-0 px-4 fw-semibold">
+          Subscribe
+        </button>
+      </form>
+    </div>
+
+    <div class="row text-start">
+      <div class="col-6 col-md">
+        <h6 class="fw-semibold mb-3">Company</h6>
+        <ul class="list-unstyled small mb-0">
+          <li>About us</li><li>Terms of use</li><li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="fw-semibold mb-3">Businesses</h6>
+        <ul class="list-unstyled small mb-0">
+          <li>Prime</li><li>Custody</li><li>Asset Hub</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="fw-semibold mb-3">Exchange</h6>
+        <ul class="list-unstyled small mb-0">
+          <li>Exchange Home</li><li>Margin Trading</li><li>Derivatives Trading</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="fw-semibold mb-3">Blockchain</h6>
+        <ul class="list-unstyled small mb-0">
+          <li>Chain Explorer</li><li>The Syndicate</li><li>Security</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="fw-semibold mb-3">Resources</h6>
+        <ul class="list-unstyled small mb-0">
+          <li>Prices</li><li>Site Widgets</li><li>Tax</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="border-top border-light mt-4 pt-3 d-flex justify-content-between align-items-center small">
+  <span>Copyright 2021, Cryptous</span>
+
+  <div class="d-flex gap-3">
+    <a href="#" class="text-decoration-none ">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="#" class="text-decoration-none ">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="#" class="text-decoration-none ">
+    <i class="fa-brands fa-square-linkedin"></i>
+    </a>
+    <a href="#" class="text-decoration-none ">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+</div>
