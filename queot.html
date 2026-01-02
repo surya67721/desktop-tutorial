@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Generator</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .quote-box {
+      background: #ffffff;
+      width: 350px;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .quote {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .author {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #667eea;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #764ba2;
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    🌟 Motivational Quote Generator
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="quote-box">
+      <div class="quote" id="quote">
+        "Believe you can and you're halfway there."
+      </div>
+      <div class="author" id="author">
+        — Theodore Roosevelt
+      </div>
+      <button onclick="generateQuote()">New Quote</button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Quote Generator | Designed by You
+  </footer>
+
+  <script>
+    const quotes = [
+      {
+        quote: "Believe you can and you're halfway there.",
+        author: "Theodore Roosevelt"
+      },
+      {
+        quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        author: "Winston Churchill"
+      },
+      {
+        quote: "Don’t watch the clock; do what it does. Keep going.",
+        author: "Sam Levenson"
+      },
+      {
+        quote: "Your limitation—it's only your imagination.",
+        author: "Unknown"
+      },
+      {
+        quote: "Push yourself, because no one else is going to do it for you.",
+        author: "Unknown"
+      }
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText =
+        `"${quotes[randomIndex].quote}"`;
+      document.getElementById("author").innerText =
+        `— ${quotes[randomIndex].author}`;
+    }
+  </script>
+
+</body>
+</html>
