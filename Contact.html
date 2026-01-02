@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION */
+.hero{
+  height:100vh;
+  background:#e8d9c5;
+  position:relative;
+  padding:120px 100px;
+}
+
+
+
+  .page {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT SIDE */
+.left {
+  width: 45%;
+  padding: 90px;
+}
+
+.step {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #c7a46b;
+  margin-bottom: 30px;
+}
+
+.left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  color: #0b1c3a;
+  margin-bottom: 50px;
+}
+
+.field label {
+  font-size: 14px;
+  color: #0b1c3a;
+}
+
+.field input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 12px 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.error {
+  display: none;
+  color: #e60000;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.next {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #0b1c3a;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 22px;
+}
+
+.alert {
+  display: none;
+  margin-top: 40px;
+  background: #f3c316;
+  color: #ffffff;
+  padding: 22px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* RIGHT SIDE */
+.right {
+  width: 55%;
+  position: relative;
+}
+
+.right iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.card {
+  position: absolute;
+  right: 30px;
+  bottom: 120px;
+  background: #ffffff;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 32px;
+  color: #000;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+
+.text-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #0b1c3a; /* same dark blue */
+  text-align: center;
+  max-width: 900px;
+  line-height: 1.4;
+}
+
+
+/* LOGO */
+.logo {
+  font-size: 36px;
+  color: #fff;
+}
+
+.logo span {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #c5a36a;
+}
+
+/* TEXT */
+.footer-col p {
+  margin: 25px 0;
+  line-height: 1.8;
+  max-width: 350px;
+}
+
+/* SOCIAL */
+.social a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #c5a36a;
+  color: #0c1733;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #cfd6e3;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #c5a36a;
+}
+
+/* SUBSCRIBE */
+.subscribe {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cfd6e3;
+  padding-bottom: 10px;
+}
+
+.subscribe input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  flex: 1;
+  font-size: 16px;
+}
+
+.subscribe span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.cities span {
+  margin-left: 20px;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 60px 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+</style>
+<body>
+<header class="navbar">
+  <img src="../Logo-header.png" class="logo">
+
+  <nav>
+    <a href="Home.html"target="-blank">HOME</a>
+    <a href="About.html"target="-blank">ABOUT</a>
+    <a href="Team.html"target="-blank">TEAM</a>
+    <a href="Careers.html" target="_blank">CAREERS</a>
+    <a href="Contact.html" target="_blank">CONTACT</a>
+  </nav>
+  <span class="info">INFO ✳</span>
+</header> 
+
+
+   <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="hero-content">
+      <span class="subtitle">OUR PEOPLE</span>
+      <h1>Contact</h1>
+    </div>
+
+    
+
+  </section>
+  
+<div class="page">
+
+  <!-- LEFT -->
+  <div class="left">
+    <p class="step">FIRST STEP</p>
+
+    <h1>
+      For starters, tell us<br>
+      your name.
+    </h1>
+
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" id="name">
+      <span class="error" id="error">Please fill out this field.</span>
+    </div>
+
+    <div class="next" id="nextBtn">
+      <span>NEXT STEP</span>
+      <span class="arrow">›</span>
+    </div>
+
+    <div class="alert" id="alertBox">
+      <span>!</span>
+      ONE OR MORE FIELDS HAVE AN ERROR. PLEASE CHECK AND TRY AGAIN.
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8704980160426!2d-74.0060151845947!3d40.71277597933092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316c2b0a1b%3A0x7c5a2b8b9a2aef5a!2sNew%20York!5e0!3m2!1sen!2sin!4v1700000000000"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+
+   
+
+    
+  </div>
+
+</div>
+<section class="text-section">
+  <h1>
+    Follow us and recive latest researches, insights & news.
+  </h1>
+  <button type="submit" onclick="openMap()">SEND</button>
+
+</section>
+
+
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- COLUMN 1 -->
+    <div class="footer-col">
+      <h2 class="logo">bridge <span>solutions</span></h2>
+      <p>
+        Professional & modern, a theme designed to help your business stand out
+        from the rest. For marketing firms, business endeavors & business consulting.
+      </p>
+
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- COLUMN 2 -->
+    <div class="footer-col">
+      <h3>Bridge</h3>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Offices</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 3 -->
+    <div class="footer-col">
+      <h3>FAQ</h3>
+      <ul>
+        <li><a href="#">Got any questions?</a></li>
+        <li><a href="#">Buying tickets</a></li>
+        <li><a href="#">How to advertise?</a></li>
+        <li><a href="#">How to find us?</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 4 -->
+    <div class="footer-col">
+      <h3>Subscribe</h3>
+      <div class="subscribe">
+        <input type="email" placeholder="Get Newsletter...">
+        <span>➜</span>
+      </div>
+      <small>*Send message</small>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>Copyright © Qode Interactive 2024</p>
+    <div class="cities">
+      <span>ZURICH</span>
+      <span>PARIS</span>
+      <span>TOKYO</span>
+      <span>BELGRADE</span>
+    </div>
+  </div>
+
+</footer>
+
+
+<script src="script1.js">
+    const btn = document.getElementById("nextBtn");
+const name = document.getElementById("name");
+const error = document.getElementById("error");
+const alertBox = document.getElementById("alertBox");
+
+btn.addEventListener("click", () => {
+  if (name.value.trim() === "") {
+    error.style.display = "block";
+    alertBox.style.display = "block";
+  } else {
+    error.style.display = "none";
+    alertBox.style.display = "none";
+    alert("Next step loaded");
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
