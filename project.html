@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Build With Purpose</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+/* -------- RESET -------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* -------- BASE -------- */
+body{
+  background:#0b0f14;
+  color:#e5e7eb;
+  font-family:'Inter', sans-serif;
+  line-height:1.6;
+}
+
+/* -------- CONTAINER -------- */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 30px;
+}
+
+/* -------- HEADER -------- */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:22px;
+  letter-spacing:1px;
+}
+
+nav a{
+  margin-left:30px;
+  text-decoration:none;
+  color:#cbd5f5;
+  font-size:15px;
+  position:relative;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#38bdf8;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* -------- HERO -------- */
+.hero{
+  margin-top:120px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.hero h1{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:56px;
+  line-height:1.1;
+}
+
+.hero h1 span{
+  color:#38bdf8;
+}
+
+.hero p{
+  margin-top:25px;
+  font-size:18px;
+  color:#cbd5f5;
+}
+
+.hero .btn{
+  display:inline-block;
+  margin-top:40px;
+  padding:14px 36px;
+  border:1px solid #38bdf8;
+  color:#38bdf8;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.hero .btn:hover{
+  background:#38bdf8;
+  color:#0b0f14;
+}
+
+/* -------- CARD -------- */
+.card{
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:18px;
+  padding:40px;
+}
+
+/* -------- ABOUT -------- */
+.about{
+  margin-top:160px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.about h2,
+.section-title{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:36px;
+  margin-bottom:20px;
+}
+
+.about p{
+  font-size:17px;
+  color:#d1d5db;
+}
+
+/* -------- SKILLS -------- */
+.skills{
+  margin-top:160px;
+}
+
+.skill-grid{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+
+.skill{
+  padding:30px;
+  border:1px solid #1f2937;
+  border-radius:16px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.skill:hover{
+  border-color:#38bdf8;
+}
+
+.skill h3{
+  margin-bottom:10px;
+}
+
+/* -------- PHILOSOPHY -------- */
+.philosophy{
+  margin-top:160px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+/* -------- CTA -------- */
+.cta{
+  margin-top:160px;
+  text-align:center;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:25px;
+  padding:16px 44px;
+  background:#38bdf8;
+  color:#0b0f14;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:40px;
+}
+
+/* -------- FOOTER -------- */
+footer{
+  margin-top:160px;
+  padding:40px 0;
+  text-align:center;
+  border-top:1px solid #1f2937;
+  font-size:14px;
+  color:#9ca3af;
+}
+
+/* -------- RESPONSIVE -------- */
+@media(max-width:900px){
+  .hero,.about,.philosophy{
+    grid-template-columns:1fr;
+  }
+  .skill-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .hero h1{
+    font-size:42px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="logo">LOGO</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Skills</a>
+    <a href="#">Philosophy</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Building software<br>with <span>clarity</span> & purpose</h1>
+    <p>
+      I design and develop clean, scalable web experiences that focus
+      on performance, usability, and long-term value.
+    </p>
+    <a href="#" class="btn">View Work</a>
+  </div>
+
+  <div class="card">
+    <p>
+      “Good software is not about how clever the code is.
+      It’s about how calmly it solves real problems.”
+    </p>
+  </div>
+</section>
+
+<section class="about">
+  <div>
+    <h2>About This Site</h2>
+    <p>
+      This website is a reminder that software development is not just
+      about frameworks and trends. It’s about building things that are
+      useful, reliable, and respectful of the user’s time.
+    </p>
+  </div>
+  <div class="card">
+    <p>
+      Every line of code written here follows three rules:
+      simplicity, readability, and purpose.
+    </p>
+  </div>
+</section>
+
+<section class="skills">
+  <h2 class="section-title">Core Skills</h2>
+  <div class="skill-grid">
+    <div class="skill"><h3>HTML & CSS</h3><p>Clean, semantic UI</p></div>
+    <div class="skill"><h3>JavaScript</h3><p>Logic & interactions</p></div>
+    <div class="skill"><h3>UI Design</h3><p>Structure over noise</p></div>
+    <div class="skill"><h3>Performance</h3><p>Fast & accessible</p></div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div>
+    <h2>Work Philosophy</h2>
+    <p>
+      Software should feel invisible. If the user notices the UI,
+      something is wrong. The goal is to make experiences that feel
+      natural and effortless.
+    </p>
+  </div>
+  <div class="card">
+    <p>
+      “Complexity is easy. Clarity takes discipline.”
+    </p>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Let’s Build Something Meaningful</h2>
+  <a href="#">Get In Touch</a>
+</section>
+
+<footer>
+  © 2026 • Built with focus, not flash
+</footer>
+
+</div>
+
+</body>
+</html>
